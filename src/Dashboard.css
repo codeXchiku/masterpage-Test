@@ -1,0 +1,91 @@
+/* Sidebar (default) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px; /* Default collapsed width */
+  background: #101286;
+  color: white;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  z-index: 1040;
+}
+
+
+/* Sidebar open (mobile toggle) */
+.sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+.main-button {
+  width: 600px;
+  background: #D3E1FF;
+  color: #000000;
+
+}
+
+@media (max-width: 450px) {
+  
+  .main-button {
+    width: 220px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+}
+
+/* Hover effect for large displays */
+@media (min-width: 992px) {
+  .sidebar {
+    transform: translateX(0);
+    width: 80px;
+  }
+
+  .sidebar:hover {
+    width: 100px;
+  }
+}
+
+/* Close Button Styling */
+.btn-danger {
+  z-index: 1050;
+}
+
+@media (min-width: 480px) {
+  .main-btn {
+    width: 280px;
+  }
+}
+
+/* Prevent content overlap when sidebar is open */
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Logo Styling */
+.logo-section {
+  background: #101286;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.menu-item {
+  padding: 12px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+  background: none;
+}
