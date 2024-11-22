@@ -1,7 +1,6 @@
 import React from "react";
-import "./Dashboard.css";
-import Nav from "./pages/Nav";
-import Sidebar from "./pages/Sidebar";
+import Sidebar from "../pages/Sidebar";
+import Navbar from "../pages/Nav"
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
@@ -9,12 +8,10 @@ function Dashboard() {
 
   return (
     <div>
-      {/* Navbar */}
-      <Nav />
+     <Navbar/>
 
       {/* Main Layout */}
       <div className="d-flex">
-        {/* Sidebar */}
         <Sidebar />
 
         {/* Dashboard Content */}

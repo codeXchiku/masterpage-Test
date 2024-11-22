@@ -83,11 +83,7 @@ function DeviceRepo() {
                 onClick={fetchDeviceData}
               >
                 <div className="card-body d-flex flex-column align-items-center justify-content-center">
-                  <img
-                    src="/icons/device-icon.png"
-                    alt="Device Icon"
-                    style={{ width: "40px", height: "40px" }}
-                  />
+                <i class="bi bi-diagram-3"></i>
                   <h6 className="mt-2 fw-bold">Device</h6>
                 </div>
               </div>
@@ -108,11 +104,7 @@ function DeviceRepo() {
                 onClick={() => handleButtonClick("Inventory")}
               >
                 <div className="card-body d-flex flex-column align-items-center justify-content-center">
-                  <img
-                    src="/icons/inventory-icon.png"
-                    alt="Inventory Icon"
-                    style={{ width: "40px", height: "40px" }}
-                  />
+                <i class="bi bi-box-seam"></i>
                   <h6 className="mt-2 fw-bold">Inventory</h6>
                 </div>
               </div>
@@ -133,11 +125,7 @@ function DeviceRepo() {
                 onClick={() => handleButtonClick("WBR")}
               >
                 <div className="card-body d-flex flex-column align-items-center justify-content-center">
-                  <img
-                    src="/icons/wbr-icon.png"
-                    alt="WBR Icon"
-                    style={{ width: "40px", height: "40px" }}
-                  />
+                <i class="bi bi-water"></i>
                   <h6 className="mt-2 fw-bold">WBR</h6>
                 </div>
               </div>
@@ -157,13 +145,9 @@ function DeviceRepo() {
                 }}
                 onClick={() => handleButtonClick("Aqua")}
               >
-                <div className="card-body d-flex flex-column align-items-center justify-content-center">
-                  <img
-                    src="/icons/aqua-icon.png"
-                    alt="Aqua Icon"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                  <h6 className="mt-2 fw-bold">Aqua</h6>
+                <div className="card-body d-flex flex-column">
+                <i class="bi bi-tsunami"></i>
+                  <h6 className="mt-2 fw-bold ">Aqua</h6>
                 </div>
               </div>
             </div>
