@@ -4,77 +4,75 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 80px; /* Default collapsed width */
+  width: 80px;
   background: #101286;
   color: white;
   overflow: hidden;
+  transform: translateX(0);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
   z-index: 1040;
 }
-
 
 /* Sidebar open (mobile toggle) */
 .sidebar.sidebar-open {
   transform: translateX(0);
 }
 
-.main-button {
-  width: 600px;
-  background: #D3E1FF;
-  color: #000000;
+/* Hover effect for large screens */
+@media (min-width: 992px) {
 
+  .sidebar:hover {
+    width: 100px; /* Expand on hover */
+    transition: all 0.3s ease;
+  }
+}
+
+/* Mobile view: Slide sidebar in and out */
+@media (max-width: 402px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 80px;
+  }
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+}
+
+/* Dashboard Content Styling */
+.dashboard-content {
+  padding: 20px;
+  background-color: #f8f9fa;
+  flex: 1;
+  /* margin-left: 80px; */
+  transition: margin-left 0.3s ease;
 }
 
 @media (max-width: 450px) {
-  
-  .main-button {
-    width: 220px;
+  .dashboard-content {
+    margin-left: 0;
   }
 
-}
-
-@media (max-width: 992px) {
-  .sidebar {
-    transform: translateX(-100%);
+  .sidebar.sidebar-open + .dashboard-content {
+    margin-left: 150px;
   }
 }
 
-/* Hover effect for large displays */
-@media (min-width: 992px) {
-  .sidebar {
-    transform: translateX(0);
-    width: 80px;
-  }
-
-  .sidebar:hover {
-    width: 100px;
-  }
-}
-
-/* Close Button Styling */
-.btn-danger {
-  z-index: 1050;
-}
-
-@media (min-width: 480px) {
-  .main-btn {
-    width: 280px;
-  }
-}
-
-/* Prevent content overlap when sidebar is open */
+/* Prevent content overflow */
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
-/* Logo Styling */
+/* Sidebar Logo Styling */
 .logo-section {
   background: #101286;
   padding: 20px 0;
   text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
+/* Sidebar Menu Items */
 .menu-item {
   padding: 12px;
   text-decoration: none;
@@ -87,5 +85,82 @@ body {
 }
 
 .menu-item:hover {
-  background: none;
+  background: rgba(255, 255, 255, 0.2);
 }
+
+/* Button Container Styling */
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.repo-button {
+  width: 200px;
+  height: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* Table Styling */
+.table-container {
+  margin-top: 20px;
+  /* background-color: #e8f4ff; */
+  padding: 2px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-heading {
+  background-color: #AFDAFA;
+  color: #000000;
+  padding: 10px;
+  /* border-radius: 8px; */
+  /* margin-bottom: 15px; */
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table tr {
+  background-color: #FFFEDA;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.table thead {
+  background-color: #FFFEDA;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Make table responsive */
+.table-responsive {
+  overflow-x: auto;
+}
+
+
+
