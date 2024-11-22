@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Nav from "./pages/Nav";
-import Sidebar from "./pages/Sidebar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../pages/Nav"
+import Sidebar from "../pages/Sidebar";
 
 function DeviceRepo() {
   const [data, setData] = useState([]);
@@ -32,11 +32,9 @@ function DeviceRepo() {
 
   return (
     <div>
-      {/* Navbar */}
-      <Nav />
+    <Navbar/>
       <div className="d-flex">
-        {/* Sidebar */}
-        <Sidebar />
+      <Sidebar/>
 
         {/* Main Content */}
         <div
